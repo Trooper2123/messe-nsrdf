@@ -1,17 +1,17 @@
 package com.rosario_lagosul.messe.write.domain.application;
 
-import com.rosario_lagosul.messe.write.domain.core.ListAggregate;
+import com.rosario_lagosul.messe.write.domain.core.MinistroListAggregate;
 
 public class CreateMinistroCommandHandler {
 
-    private final ListAggregate listAggregate;
+    private final MinistroListAggregate ministroListAggregate;
 
-    public CreateMinistroCommandHandler(ListAggregate listAggregate) {
-        this.listAggregate = listAggregate;
+    public CreateMinistroCommandHandler(MinistroListAggregate ministroListAggregate) {
+        this.ministroListAggregate = ministroListAggregate;
     }
 
     public void handle(CreateMinistroCommand command) {
-    listAggregate.create(command.getId(),
+    ministroListAggregate.create(command.getId(),
             command.getName(),
             command.getPhone(),
             command.getAddress(),

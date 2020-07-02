@@ -1,6 +1,6 @@
 package com.rosario_lagosul.messe.write.domain.application;
 
-import com.rosario_lagosul.messe.write.domain.core.ListAggregate;
+import com.rosario_lagosul.messe.write.domain.core.MinistroListAggregate;
 import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.mock;
@@ -19,14 +19,14 @@ public class CreateMinistroCommandHandlerTest {
         String email = "teste@teste.com";
         boolean availability = false;
         CreateMinistroCommand command =  new CreateMinistroCommand(id,name,phone,address,email,availability);
-        ListAggregate listAggregate = mock(ListAggregate.class);
+        MinistroListAggregate ministroListAggregate = mock(MinistroListAggregate.class);
 
         //when
-       CreateMinistroCommandHandler handler = new CreateMinistroCommandHandler(listAggregate);
+       CreateMinistroCommandHandler handler = new CreateMinistroCommandHandler(ministroListAggregate);
        handler.handle(command);
 
         //then
 
-        verify(listAggregate).create(id,name,phone,address,email,availability);
+        verify(ministroListAggregate).create(id,name,phone,address,email,availability);
     }
 }
