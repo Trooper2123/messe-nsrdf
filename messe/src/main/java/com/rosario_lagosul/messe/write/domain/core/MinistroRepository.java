@@ -4,7 +4,6 @@ import java.util.Optional;
 
 public interface MinistroRepository {
 
-    void create(int id, String name, String phone, String address, String email, boolean availability);
+    void create(Ministro ministro);
 
-     Optional<MinistroListAggregate> findById(int id);
 }

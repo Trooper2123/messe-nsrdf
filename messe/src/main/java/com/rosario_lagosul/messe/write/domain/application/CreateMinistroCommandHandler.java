@@ -1,22 +1,25 @@
 package com.rosario_lagosul.messe.write.domain.application;
 
-import com.rosario_lagosul.messe.write.domain.core.MinistroListAggregate;
+import com.rosario_lagosul.messe.write.domain.core.Ministro;
+import com.rosario_lagosul.messe.write.domain.core.MinistroRepository;
 
 public class CreateMinistroCommandHandler {
 
-    private final MinistroListAggregate ministroListAggregate;
+    private final MinistroRepository repository;
 
-    public CreateMinistroCommandHandler(MinistroListAggregate ministroListAggregate) {
-        this.ministroListAggregate = ministroListAggregate;
+    public CreateMinistroCommandHandler(MinistroRepository repository) {
+        this.repository = repository;
     }
 
     public void handle(CreateMinistroCommand command) {
-    ministroListAggregate.create(command.getId(),
-            command.getName(),
-            command.getPhone(),
-            command.getAddress(),
-            command.getEmail(),
-            command.isAvailability());
+        Ministro ministro = new Ministro()
+                .setId(command.getId())
+                .setName(command.getName())
+                .setPhome(command.getPhone())
+                .setEmail(command.getEmail())
+                .setAddress(command.getEmail())
+                .setAvailability(command.isAvailability());
+
+        repository.create(ministro);
     }
 }
-
