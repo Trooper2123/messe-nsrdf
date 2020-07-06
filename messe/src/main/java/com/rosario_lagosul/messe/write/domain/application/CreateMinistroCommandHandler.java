@@ -17,7 +17,7 @@ public class CreateMinistroCommandHandler {
                 .setName(command.getName())
                 .setPhome(command.getPhone())
                 .setEmail(command.getEmail())
-                .setAddress(command.getEmail())
+                .setAddress(command.getAddress())
                 .setAvailability(command.isAvailability());
 
         repository.create(ministro);
