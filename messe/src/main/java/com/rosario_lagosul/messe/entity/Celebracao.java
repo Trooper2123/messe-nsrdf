@@ -1,6 +1,9 @@
 package com.rosario_lagosul.messe.entity;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Date;
 
 @Entity
 @Table(name = "celebracao")
@@ -9,10 +12,13 @@ public class Celebracao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String date;
     private String time;
 
 
+    public Celebracao() {
+    }
 
     public Celebracao(Long id, String date, String time) {
         this.id = id;
@@ -20,10 +26,9 @@ public class Celebracao {
         this.time = time;
     }
 
-    public Celebracao() {
-    }
-
     public Celebracao(String date, String time) {
+        this.date = date;
+        this.time = time;
     }
 
     public Long getId() {
@@ -49,5 +54,4 @@ public class Celebracao {
     public void setTime(String time) {
         this.time = time;
     }
-
 }

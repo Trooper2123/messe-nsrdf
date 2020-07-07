@@ -1,11 +1,7 @@
 package com.rosario_lagosul.messe;
 
 import com.rosario_lagosul.messe.entity.Celebracao;
-import com.rosario_lagosul.messe.service.CelebracaoService;
 import org.junit.jupiter.api.Test;
-
-import java.time.LocalDateTime;
-import java.util.Date;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -15,8 +11,8 @@ public class CelebracaoTest {
     void GIVEN_ValidData_Must_RetriveSameData() {
         //given
         Long id = 1L;
-        String date = "07/07/2020";
-        String time = "19:00";
+        var date = "2020-07-07";
+        var time = "19:00";
 
         //when
 
