@@ -56,6 +56,11 @@ public class MinistroServiceImpl implements MinistroService {
         }
     }
 
+    @Override
+    public Ministro save(Ministro ministro) {
+        return null;
+    }
+
     private void updateData(Ministro entity, Ministro obj) {
         entity.setName(obj.getName());
         entity.setPhone(obj.getPhone());

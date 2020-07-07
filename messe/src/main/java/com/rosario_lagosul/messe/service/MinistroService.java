@@ -19,4 +19,5 @@ public interface MinistroService {
 
     void deleteById(Long id);
 
+    Ministro save(Ministro ministro);
 }
